@@ -1,0 +1,15 @@
+<h1>Login</h1>
+{{#if email}}
+  <div class="success">Your login code has been sent to {{email}}</div>
+{{/if}}
+
+<form action="/users/token" method="POST">
+  <div>
+    <label for="code">Code</label>
+    <input name="code" placeholder="Enter Code" />
+  </div>
+  <input type="hidden" value="{{email}}" name="email" />
+  <button type="submit" class="btn btn-primary btn-block">Login</button>
+
+  <p>Don't have An Account? <a href="/users/register">Register</a></p>
+</form>

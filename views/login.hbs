@@ -1,0 +1,17 @@
+<h1> Login </h1>
+{{#if error}}
+  <div class="error">{{{error}}}</div>
+{{/if}}
+{{#if info}}
+  <div class="info">{{{info}}}</div>
+{{/if}}
+
+<form action="/users/login" method="POST">
+  <div>
+    <label for="email">Email</label>
+    <input type="email" name="email" placeholder="Enter Email" />
+  </div>
+  <button type="submit" class="btn btn-primary btn-block">Send Code</button>
+
+  <p>Don't have An Account? <a href="/users/register">Register</a></p>
+</form>
