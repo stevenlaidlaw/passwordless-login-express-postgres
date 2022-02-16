@@ -52,7 +52,6 @@ router.post("/login", [val_user_email], async (req, res) => {
     .toUpperCase();
   res.send(code);
 
-  return;
   const encrypted_code = bcrypt.hashSync(code, 10);
 
   // Delete any existing OTPs and insert this new one
