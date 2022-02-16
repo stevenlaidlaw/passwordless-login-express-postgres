@@ -5,6 +5,7 @@ const { sendEmail } = require("../lib/email");
 const { val_user_email, val_user_name } = require("../lib/validators");
 const { makeToken } = require("../lib/auth");
 const Queries = require("../db/queries");
+const crypto = require("crypto");
 
 const router = new Router();
 
@@ -44,7 +45,14 @@ router.post("/login", [val_user_email], async (req, res) => {
   const user = users[0];
 
   // Generate OTP
-  const code = Math.random().toString(32).slice(2, 8).toUpperCase();
+  const code = crypto
+    .randomBytes(256)
+    .toString("hex")
+    .slice(0, 6)
+    .toUpperCase();
+  res.send(code);
+
+  return;
   const encrypted_code = bcrypt.hashSync(code, 10);
 
   // Delete any existing OTPs and insert this new one
