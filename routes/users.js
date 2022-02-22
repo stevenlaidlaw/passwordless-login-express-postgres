@@ -50,8 +50,6 @@ router.post("/login", [val_user_email], async (req, res) => {
     .toString("hex")
     .slice(0, 6)
     .toUpperCase();
-  res.send(code);
-
   const encrypted_code = bcrypt.hashSync(code, 10);
 
   // Delete any existing OTPs and insert this new one
