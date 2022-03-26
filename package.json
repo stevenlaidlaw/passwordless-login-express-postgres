@@ -1,5 +1,5 @@
 {
-  "name": "passwordless-login",
+  "name": "passwordless-login-express-postgres",
   "version": "1.0.0",
   "description": "",
   "main": "app.js",

@@ -1,4 +1,4 @@
-# Passwordless Auth Skeleton
+# Passwordless Login Express Postgres
 
 ## Architecture
 
