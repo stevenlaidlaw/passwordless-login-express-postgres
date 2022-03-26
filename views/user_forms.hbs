@@ -1,0 +1,32 @@
+<div class="my-12 flex justify-center">
+  {{> logo}}
+</div>
+
+<div class="m-auto mb-16 max-w-md flex flex-col gap-8">
+  {{#if error}}
+  <div class="error">{{{error}}}</div>
+  {{/if}}
+  {{#if info}}
+  <div class="info">{{{info}}}</div>
+  {{/if}}
+
+  <div class="card flex-1">
+    <h1 class="font-header text-xl font-extrabold mb-4">{{title}}</h1>
+    {{#if register}}
+    {{> form_register}}
+    {{/if}}
+    {{#if login}}
+    {{> form_login}}
+    {{/if}}
+    {{#if token}}
+    {{> form_token}}
+    {{/if}}
+  </div>
+
+  <hr class="w-3/4 m-auto" />
+
+  <div class="flex flex-col text-center">
+    <div class="pb-2 opacity-50">{{question}}</div>
+    <a class="button" href="{{link}}">{{button}}</a>
+  </div>
+</div>

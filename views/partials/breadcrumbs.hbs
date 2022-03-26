@@ -1,0 +1,16 @@
+<div class="flex flex-wrap items-center gap-2 my-4">
+	<a href="/worlds/w/{{world.id}}">{{world.name}}</a>
+
+	{{#if category}}
+	/ <a href="/worlds/w/{{world.id}}?category={{category.safe}}">{{category.name}}</a>
+	{{/if}}
+
+	{{#if thing}}
+	/ <a href="/worlds/w/{{world.id}}/t/{{thing.id}}">{{thing.name}}</a>
+	{{/if}}
+
+	<div class="flex-1"></div>
+	<form class="flex-1 m-0 flex" action="/worlds/w/{{world.id}}/search">
+		<input name="q" class="flex-1" placeholder="Search {{world.name}}" value="{{searchQuery}}" />
+	</form>
+</div>

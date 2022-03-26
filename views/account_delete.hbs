@@ -1,0 +1,21 @@
+<div class="my-4 flex flex-col gap-4">
+  <h1>{{title}}</h1>
+  <div class="error">
+    <p>This will delete the account and all current data for user
+      <strong>{{user.name}}</strong>. This data is <em><strong>unrecoverable</strong></em>. Please ensure you understand
+      the consequences of this action before proceeding.
+    </p>
+    <p>Type <span class="border font-extrabold bg-red-200 p-2 rounded">I AGREE</span> in the field below to confirm
+      deletion of
+      your
+      account.
+    </p>
+  </div>
+  <div class="card max-w-md m-auto flex flex-col gap-4">
+    <form class="flex flex-col gap-4" action="/account/delete" method="POST">
+      <input type="confirmation" name="confirmation" placeholder="Confirmation" />
+      <button class="button-danger" type="submit">Confirm Delete</button>
+      <a href="/account" class="button">Cancel</a>
+    </form>
+  </div>
+</div>

@@ -1,0 +1,16 @@
+{{#if error}}
+<div class="error max-w-lg m-auto my-4">
+  <h4>Dev Error</h4>
+  <hr class="w-3/4 m-auto" />
+  <p>{{error}}</p>
+  <hr class="w-3/4 m-auto" />
+  <p>{{error.message}}</p>
+</div>
+{{/if}}
+
+<div class="info max-w-lg m-auto my-4">
+  <div class="text-6xl">:-(</div>
+  <h3 class="my-4">Error</h3>
+  <p class="max-w-md m-auto">An unexpected error has occurred, try again. If the problem persists, please contact the
+    site administrator.</p>
+</div>
