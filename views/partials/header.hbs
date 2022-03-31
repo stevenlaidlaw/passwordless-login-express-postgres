@@ -1,10 +1,10 @@
-{{#unless noHeader}}
 <div class="bg-slate-900 text-white py-4">
   <div class="max-w-7xl px-4 m-auto flex items-center gap-8 flex-wrap">
     {{> logo}}
     <span class="flex-1"></span>
     <div class="flex items-center gap-8 flex-wrap">
       {{#if user}}
+      <a href="/account" class="font-bold text-white hover:text-sky-400">Account</a>
       <a href="/login/logout" class="font-bold text-white hover:text-sky-400">Logout</a>
       {{else}}
       <a href="/login" class="font-bold text-white hover:text-sky-400">Login</a>
@@ -13,19 +13,3 @@
     </div>
   </div>
 </div>
-{{/unless}}
-
-{{#if error}}
-<div class="m-auto my-8 max-w-7xl flex flex-col gap-8">
-  {{#if error}}
-  <div class="error">{{{error}}}</div>
-  {{/if}}
-</div>
-{{/if}}
-{{#if info}}
-<div class="m-auto my-8 max-w-7xl flex flex-col gap-8">
-  {{#if info}}
-  <div class="info">{{{info}}}</div>
-  {{/if}}
-</div>
-{{/if}}
